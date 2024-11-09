@@ -13,7 +13,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 // express handlebars is an express plugin for handlebars templating
 const expressHandlebars = require('express-handlebars');
-
+require('dotenv').config();
 // import our router.js file to handle the MVC routes
 // In MVC, you have 'routes' that line up URLs to controller methods
 const router = require('./router.js');
@@ -23,7 +23,7 @@ const router = require('./router.js');
 // your Config Vars in the Heroku Dashboard > Settings > Config Vars section.
 // otherwise fallback to localhost.
 // The string after mongodb://localhost is the database name. It can be anything you want.
-const dbURI = process.env.MONGODB_URI || 'mongodb+srv://dcdaccarett:Phsq1PTVNBdJXx9H@tangclusting.ziofk.mongodb.net/?retryWrites=true&w=majority&appName=TangClusting';
+const dbURI = process.env.MONGODB_URI
 
 // call mongoose's connect function and pass in the url.
 // If there are any errors connecting, we will throw it and kill the server.
